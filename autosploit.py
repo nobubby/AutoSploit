@@ -81,14 +81,18 @@ def animation(text):
     else:
         pass
 
+def clear():
+    """Clears the terminal"""
+    print ("\033[H\033[J")
 
 def usage():
     """Usage & Legal."""
     global usage_and_legal_path
-    print("\033[H\033[J")  # Clear terminal
+    clear()
     logo()
     with open(usage_and_legal_path) as info:
         print(info.read())
+
 
 
 def cmdline(command):
@@ -124,7 +128,7 @@ def exploit(query=None, single=None):
     global local_host
     global loaded_exploits
     global stop_animation
-    print("\033[H\033[J")  # Clear terminal
+    clear()
 
     logo()
 
@@ -188,7 +192,7 @@ def settings(single=None):
     global local_host
     global configured
 
-    print("\033[H\033[J")  # Clear terminal
+    clear()
     logo()
 
     print(
@@ -261,7 +265,7 @@ def targets(clobber=True):
     global query
     global stop_animation
 
-    print("\033[H\033[J")  # Clear terminal
+    clear()
     logo()
 
     print("[{}]Please provide your platform specific search query.".format(t.green("+")))
@@ -328,7 +332,7 @@ def import_custom(clobber=True):
     """
     Function to import custom host list.
     """
-    print("\033[H\033[J")  # Clear terminal
+    clear();
     logo()
 
     custom_list = []
@@ -378,7 +382,7 @@ def single_target():
     Add single target to host list or pass it to the exploit function directly
     to attempt to exploit it.
     """
-    print("\033[H\033[J")  # Clear terminal
+    clear()
     logo()
 
     print("[{}]Please provide a single IPv4.".format(t.green("+")))
